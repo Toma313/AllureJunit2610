@@ -12,8 +12,12 @@ public class LoginPage {
     WebElement pas;
     @FindBy(xpath = "//button[@type=\"submit\"]")
     WebElement logIn;
-// @Step ("Send user: {user}, password: {password}")
-@Description ("confirm form for login")
+    @FindBy (xpath = "//a[@class=\"login__link\"]")
+    public WebElement loglink;
+
+
+@Step("Send user: {user}, pass: {password}")
+    @Description ("confirm form for login")
     public void comfirm(String user, String password){
         userName.sendKeys(user);
         pas.sendKeys(password);
